@@ -7,7 +7,7 @@
 
 using namespace Walnut;
 
-class ExampleLayer : public Walnut::Layer
+class ExampleLayer : public Layer
 {
 public:
 	virtual void OnUIRender() override
@@ -64,12 +64,12 @@ private:
 	float m_LastRenderTime = 0.0f;
 };
 
-Walnut::Application* Walnut::CreateApplication(int argc, char** argv)
+Application* Walnut::CreateApplication(int argc, char** argv)
 {
-	Walnut::ApplicationSpecification spec;
+	ApplicationSpecification spec;
 	spec.Name = "Ray Tracing";
 
-	Walnut::Application* app = new Walnut::Application(spec);
+	Application* app = new Application(spec);
 	app->PushLayer<ExampleLayer>();
 	app->SetMenubarCallback([app]()
 	{
